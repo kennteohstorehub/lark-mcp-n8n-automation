@@ -1,0 +1,41 @@
+{
+  "totalFiles": 22,
+  "fileTypes": {
+    "": 3,
+    ".md": 2,
+    ".html": 1,
+    ".png": 7,
+    ".txt": 1,
+    ".js": 4,
+    ".py": 2,
+    ".json": 2
+  },
+  "recentFiles": [
+    {
+      "name": "productivity_2025-07-05.md",
+      "size": 984,
+      "modified": "2025-07-05T16:38:39.754Z"
+    },
+    {
+      "name": "surprise_screenshot_1751733516477.png",
+      "size": 1180998,
+      "modified": "2025-07-05T16:38:37.029Z"
+    },
+    {
+      "name": "surprise_automation_simple.js",
+      "size": 11259,
+      "modified": "2025-07-05T16:38:26.566Z"
+    },
+    {
+      "name": "surprise_screenshot_1751733443682.png",
+      "size": 884192,
+      "modified": "2025-07-05T16:37:24.340Z"
+    },
+    {
+      "name": "surprise_automation.js",
+      "size": 9943,
+      "modified": "2025-07-05T16:37:16.866Z"
+    }
+  ],
+  "projectSize": 10527455
+}

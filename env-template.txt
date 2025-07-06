@@ -1,0 +1,14 @@
+# Gemini Pro API Key (Required)
+# Get your API key from: https://makersuite.google.com/app/apikey
+GEMINI_API_KEY=your-gemini-api-key-here
+
+# Firecrawl API Key (Optional - for web scraping)
+# Get your API key from: https://firecrawl.dev/
+FIRECRAWL_API_KEY=your-firecrawl-api-key-here
+
+# National Park Service API Key (Optional - for park information)
+# Get your API key from: https://www.nps.gov/subjects/developer/api-documentation.htm
+NPS_API_KEY=your-nps-api-key-here
+
+# Playwright Browser Path (Optional - if using custom Playwright installation)
+PLAYWRIGHT_BROWSERS_PATH=/opt/homebrew/bin/playwright 
