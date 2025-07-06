@@ -270,6 +270,13 @@ Your setup is now complete! You can:
 
 # 🚀 Lark Suite MCP Integration with n8n
 
+[![GitHub release](https://img.shields.io/github/release/kennteohstorehub/lark-mcp-n8n-automation.svg)](https://github.com/kennteohstorehub/lark-mcp-n8n-automation/releases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Node.js Version](https://img.shields.io/badge/node-%3E%3D16.0.0-brightgreen.svg)](https://nodejs.org/)
+[![MCP Compatible](https://img.shields.io/badge/MCP-Compatible-blue.svg)](https://modelcontextprotocol.io/)
+[![n8n Integration](https://img.shields.io/badge/n8n-Integration-red.svg)](https://n8n.io/)
+[![Lark Suite](https://img.shields.io/badge/Lark-Suite-orange.svg)](https://larksuite.com/)
+
 This repository contains tools and guides for integrating **Lark Suite** (ByteDance's collaboration platform) with **MCP (Model Context Protocol)** and **n8n** for powerful AI automation workflows.
 
 ## 📱 What's Included
