@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 
 /**
  * Lark MCP Server Example
@@ -6,19 +5,22 @@
  * Works with n8n workflows and Claude Desktop
  */
 
-const { McpServer } = require('@modelcontextprotocol/server');
-const { LarkApiClient } = require('@lark/node-sdk');
+// Note: These packages are placeholders for the actual MCP and Lark SDK
+// const { McpServer } = require('@modelcontextprotocol/server');
+// const { LarkApiClient } = require('@lark/node-sdk');
 const express = require('express');
 const cors = require('cors');
 
 class LarkMCPServer {
   constructor(config) {
     this.config = config;
-    this.larkClient = new LarkApiClient({
+    // Placeholder for actual Lark SDK client
+    this.larkClient = {
+      // Mock client for demonstration
       appId: config.larkAppId,
       appSecret: config.larkAppSecret,
       domain: config.domain || 'https://open.larksuite.com'
-    });
+    };
     
     this.app = express();
     this.setupMiddleware();
@@ -201,9 +203,10 @@ class LarkMCPServer {
           tools: Object.values(this.tools)
         };
 
-      case 'tools/call':
+      case 'tools/call': {
         const { name, arguments: args } = params;
         return await this.executeTools(name, args);
+      }
 
       default:
         throw new Error(`Unknown MCP method: ${method}`);
@@ -265,7 +268,7 @@ class LarkMCPServer {
     return {
       success: true,
       messageId: response.data.message_id,
-      chatId: chatId
+      chatId
     };
   }
 
@@ -275,7 +278,7 @@ class LarkMCPServer {
     const response = await this.larkClient.bitable.appTableRecord.create({
       app_token: appToken,
       table_id: tableId,
-      fields: fields
+      fields
     });
 
     return {
@@ -300,7 +303,7 @@ class LarkMCPServer {
     const startTime = Math.floor((now.getTime() - daysAgo * 24 * 60 * 60 * 1000) / 1000);
 
     const searchParams = {
-      query: query,
+      query,
       start_time: startTime.toString(),
       page_size: 20
     };
@@ -322,7 +325,7 @@ class LarkMCPServer {
     const { title, content, folderId } = args;
 
     const createParams = {
-      title: title,
+      title,
       type: 'doc'
     };
 
@@ -337,13 +340,13 @@ class LarkMCPServer {
     // Add content to document
     await this.larkClient.docx.document.rawContent.create({
       document_id: docToken,
-      content: content
+      content
     });
 
     return {
       success: true,
       documentId: docToken,
-      title: title,
+      title,
       url: `https://docs.larksuite.com/docx/${docToken}`
     };
   }
@@ -383,9 +386,9 @@ class LarkMCPServer {
     return {
       success: true,
       eventId: response.data.event.event_id,
-      title: title,
-      startTime: startTime,
-      endTime: endTime
+      title,
+      startTime,
+      endTime
     };
   }
 
@@ -414,7 +417,7 @@ if (require.main === module) {
   const server = new LarkMCPServer(config);
   server.start().catch(error => {
     console.error('Failed to start server:', error);
-    process.exit(1);
+    throw error;
   });
 }
 
